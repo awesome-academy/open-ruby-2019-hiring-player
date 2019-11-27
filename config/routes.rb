@@ -1,1 +1,3 @@
-Rails.application.routes.draw do; end
+Rails.application.routes.draw do
+  root "static_pages#home"
+end
