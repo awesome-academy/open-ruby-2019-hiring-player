@@ -1,2 +1,15 @@
 en:
   hello: "Hello world"
+
+  layouts:
+    header:
+      login: "Login"
+      title: "Play Together"
+
+    application:
+      base_title: "Play Together"
+  
+  static_pages:
+    home:
+      placeholder: "Search player..."
+      home: "Home"
