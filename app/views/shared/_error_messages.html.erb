@@ -1,0 +1,8 @@
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      <%= t ".contains_error" %><%= pluralize(object.errors.count, t(".error")) %>.
+    </div>
+    <%= render "shared/list_errors", list_errors: object %>
+  </div>
+<% end %>

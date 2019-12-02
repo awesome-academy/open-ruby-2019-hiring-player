@@ -2,6 +2,20 @@
 @import 'bootstrap';
 @import 'color.scss';
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -34,6 +48,10 @@ section {
 
 textarea {
   resize: vertical;
+}
+
+body{
+  padding-top: 50px;
 }
 
 html,body {
@@ -112,4 +130,11 @@ html,body {
     color: $white;
     text-decoration:none;
   }
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid $border;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
 }
