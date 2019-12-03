@@ -4,6 +4,7 @@ en:
     header:
       login: "Login"
       title: "Play Together"
+      wellcome: "Well come, "
     application:
       base_title: "Play Together"
   static_pages:
@@ -30,3 +31,11 @@ en:
     error_messages:
       contains_error: "The form contains "
       error: "error"
+  sessions:
+    new:
+      login: "Log in"
+      email: "Email"
+      password: "Password"
+      new_user: "You don't have an account?"
+    create:
+      danger: "Invalid email/password combination"
