@@ -1,0 +1,4 @@
+username_maximum: 50
+email_maximum: 250
+password_minimum: 6
+validate_email: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

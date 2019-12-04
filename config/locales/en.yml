@@ -1,15 +1,32 @@
 en:
   hello: "Hello world"
-
   layouts:
     header:
       login: "Login"
       title: "Play Together"
-
     application:
       base_title: "Play Together"
-  
   static_pages:
     home:
       placeholder: "Search player..."
       home: "Home"
+  users:
+    new:
+      title: "Sign Up"
+      info: "Success"
+      danger_user: "Error create new user"
+      danger_profile: "Error build profile new user"
+    form:
+      name: "Name"
+      placeholder_name: "Name..."
+      email: "Email"
+      placeholder_email: "Email..."
+      password: "Password"
+      placeholder_password: "Password..."
+      password_confirm: "Password Confirm"
+      placeholder_password_confirm: "Password Confirm..."
+      submit: "Sign in"
+  shared:
+    error_messages:
+      contains_error: "The form contains "
+      error: "error"

@@ -4,7 +4,7 @@ class CreateUserProfiles < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.string :address
       t.integer :age
-      t.integer :sex
+      t.integer :gender
       t.integer :money
       t.string :game
       t.string :rank

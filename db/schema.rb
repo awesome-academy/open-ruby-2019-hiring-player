@@ -36,15 +36,6 @@ ActiveRecord::Schema.define(version: 2019_11_27_032754) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "oders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "time_start"
-    t.datetime "time_end"
-    t.integer "hourly_rent"
-    t.integer "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "time_start"
     t.datetime "time_end"
@@ -81,7 +72,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_032754) do
     t.integer "user_id"
     t.string "address"
     t.integer "age"
-    t.integer "sex"
+    t.integer "gender"
     t.integer "money"
     t.string "game"
     t.string "rank"
@@ -95,6 +86,7 @@ ActiveRecord::Schema.define(version: 2019_11_27_032754) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password_digest"
     t.integer "role", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
