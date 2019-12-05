@@ -27,6 +27,25 @@ en:
       password_confirm: "Password Confirm"
       placeholder_password_confirm: "Password Confirm..."
       submit: "Sign in"
+    form_update:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirm: "Password Confirm"
+      address: "Address"
+      age: "Age"
+      gender: "Gender"
+      game: "Game"
+      rank: "Rank"
+      hourly_rent: "Hourly rent"
+      avatar: "Avatar"
+      submit: "Update Your Profile"
+    edit:
+      edit: "Edit profile user"
+      update: "Update your profile"
+    update:
+      success: "Update success"
+      danger: "Fail update user profile"
   shared:
     error_messages:
       contains_error: "The form contains "

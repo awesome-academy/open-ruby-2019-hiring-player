@@ -1,0 +1,33 @@
+<% provide :title, @user.name %>
+
+<div class="col-md-5 col-md-offset-3" id="user_profile_show">
+  <div class="row">
+    <div class="col-sm-6 col-md-6">
+      <%= image_tag((@user_profile.avatar.url if @user_profile.avatar?), class: "img-rounded img-responsive", id:"img_user") %>
+    </div>
+    <h4>
+      <div class="col-sm-4 col-md-4">
+        <blockquote>
+          <p><%= @user.name %></p>
+          <small>
+            <%= @user_profile.address %> <i class="glyphicon glyphicon-map-marker"></i>
+          </small>
+        </blockquote>
+        <p> 
+          <i class="glyphicon glyphicon-envelope"></i> <%= @user.email %>
+          <br/>
+          <i class="glyphicon glyphicon-user"></i> <%= @user_profile.gender %>
+          <br/>
+          <i class="glyphicon glyphicon-gift"></i> <%= @user_profile.age %>
+          <br/>
+          <i class="glyphicon glyphicon-king"></i> <%= @user_profile.game %>
+          <br/>
+          <i class="glyphicon glyphicon-arrow-up"></i> <%= @user_profile.rank %>
+          <br/>
+          <i class="glyphicon glyphicon-euro"></i> <%= @user_profile.hourly_rent %>
+          <br/>
+        </p>
+      </div>
+    </h4>
+  </div>
+</div>
