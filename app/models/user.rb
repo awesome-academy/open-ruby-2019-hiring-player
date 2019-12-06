@@ -1,13 +1,17 @@
 class User < ApplicationRecord
   has_secure_password
 
-  USER_PARAMS = %i(name email password password_confirmation).freeze
-  
-  enum role: %i(user admin)
-
   has_one :user_profile, dependent: :destroy
   has_one :sender_recipient, dependent: :destroy
+
+  accepts_nested_attributes_for :user_profile
+
+  USER_PARAMS = %i(name email password password_confirmation).freeze
+  USER_UPDATE_PARAMS = [:name, :email, :password, :password_confirmation, user_profile_attributes: 
+    [:id, :address, :age, :gender, :game, :rank, :hourly_rent, :avatar]].freeze
   
+  before_create :build_user_profile
+
   validates :name, presence: true, length: {maximum: Settings.username_maximum}
   validates :email, presence: true, length: {maximum: Settings.email_maximum}, 
     format: {with: Settings.validate_email}, uniqueness: {case_sensitive: false}
