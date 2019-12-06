@@ -12,11 +12,16 @@ en:
       placeholder: "Search player..."
       home: "Home"
   users:
+    index:
+      no_suitable_user: "There are no player containing the name "
+      title: "List User Search"
+      danger_loggin: "Please log in"
     new:
       title: "Sign Up"
       info: "Success"
       danger_user: "Error create new user"
       danger_profile: "Error build profile new user"
+      danger_loggin: "Please log in"
     form:
       name: "Name"
       placeholder_name: "Name..."
@@ -43,9 +48,11 @@ en:
     edit:
       edit: "Edit profile user"
       update: "Update your profile"
+      danger_loggin: "Please log in"
     update:
       success: "Update success"
       danger: "Fail update user profile"
+      danger_loggin: "Please log in"
   shared:
     error_messages:
       contains_error: "The form contains "

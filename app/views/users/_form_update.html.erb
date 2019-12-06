@@ -70,7 +70,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="form-group">
-          <%= image_tag((@user.user_profile.avatar.url if @user.user_profile.avatar?), class: "img-rounded img-responsive", id:"img_user") %>
+          
           <%= ff.label t ".avatar" %>
           <%= ff.file_field :avatar %>
         </div>

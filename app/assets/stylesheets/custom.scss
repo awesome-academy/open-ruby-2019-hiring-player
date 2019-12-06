@@ -52,6 +52,9 @@ textarea {
 
 body{
   padding-top: 50px;
+  > .container, > .col-md-6{
+    padding-bottom: 100px;
+  }
 }
 
 html,body {
@@ -150,4 +153,15 @@ input, textarea, select, .uneditable-input {
 
 #user_profile_show{
   padding-top: 40px;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+  }
 }

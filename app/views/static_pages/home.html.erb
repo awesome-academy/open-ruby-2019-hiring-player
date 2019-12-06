@@ -1,9 +1,9 @@
 <% provide :title, t(".home") %>
 <section class="home">
     <div class="container">
-    <%= form_tag("#", class: "searchbar") do |f| %>
+    <%= form_tag(users_path, method: :get, class: "searchbar") do |f| %>
       <%= text_field_tag :search, "", class: "search_input", placeholder: t(".placeholder") %>
-      <%= link_to "#", class: "search_icon" do %>
+      <%= button_tag(type: "submit", class: "search_icon") do %>
         <i class="glyphicon glyphicon-search"></i>
       <% end %>
     <% end %>
