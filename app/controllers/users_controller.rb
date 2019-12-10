@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :load_user, only: %i(show edit update)
   before_action :load_user_profile, only: %i(show)
+  before_action :logged_in_user, only: %i(index edit update)
+
+  def index
+    @users = params[:search] ? User.search_name(params[:search]) : User
+    @users = @users.page(params[:page]).per Settings.user_per_page
+  end
 
   def new
     @user = User.new
@@ -41,6 +47,10 @@ class UsersController < ApplicationController
 
   def update_user_params
     params.require(:user).permit User::USER_UPDATE_PARAMS
+  end
+
+  def search_params
+    params.permit(:search)
   end
   
   def load_user

@@ -1,0 +1,27 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+
+<div class="container">
+  <% if @users.blank? %>
+    <h4><%= t ".no_suitable_user" %> <%= params[:search] %>.</h4>
+  <% else %>
+    <ul class="users">
+      <% @users.each do |user| %>    
+        <li>
+          <div class="col-sm-2 col-md-2">
+            <%= image_tag((user.user_profile.avatar.url), class: "img-rounded img-responsive", id:"img_user_index") %>
+          </div>
+          <div class="col-sm-2 col-md-2">
+            <h4>
+              <p><%= link_to user.name, user %></p>
+              <small>
+                <%= user.user_profile.address %>
+              </small>
+            </h4>
+          </div>        
+        </li>
+    <% end %>
+    </ul>
+  <% end %>
+  <%= paginate @users %>
+</div>

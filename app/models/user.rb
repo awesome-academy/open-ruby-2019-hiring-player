@@ -17,6 +17,8 @@ class User < ApplicationRecord
     format: {with: Settings.validate_email}, uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: Settings.password_minimum}
   
+  scope :search_name, ->name{where "name LIKE ?", "%#{name}%"}
+  
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : 
