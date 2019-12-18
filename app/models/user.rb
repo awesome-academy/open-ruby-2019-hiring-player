@@ -2,7 +2,15 @@ class User < ApplicationRecord
   has_secure_password
 
   has_one :user_profile, dependent: :destroy
-  has_one :sender_recipient, dependent: :destroy
+
+  has_many :active, class_name: SenderRecipient.name, foreign_key: :sender_id
+  has_many :active_follow, ->{where reactionable_type: Follow.name}, class_name: SenderRecipient.name,
+    foreign_key: :sender_id
+  has_many :passive, class_name: SenderRecipient.name, foreign_key: :receiver_id
+  has_many :passive_follow, ->{where reactionable_type: Follow.name}, class_name: SenderRecipient.name,
+    foreign_key: :receiver_id
+  has_many :following, through: :active_follow, source: :receiver
+  has_many :followers, through: :passive_follow, source: :sender
 
   accepts_nested_attributes_for :user_profile
 
@@ -11,7 +19,7 @@ class User < ApplicationRecord
     [:id, :address, :age, :gender, :game, :rank, :hourly_rent, :avatar]].freeze
   
   before_create :build_user_profile
-
+  
   validates :name, presence: true, length: {maximum: Settings.username_maximum}
   validates :email, presence: true, length: {maximum: Settings.email_maximum}, 
     format: {with: Settings.validate_email}, uniqueness: {case_sensitive: false}
@@ -25,5 +33,17 @@ class User < ApplicationRecord
                                                     BCrypt::Engine.cost
       BCrypt::Password.create string, cost: cost
     end
+  end
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+  
+  def following? other_user
+    following.include? other_user
   end
 end

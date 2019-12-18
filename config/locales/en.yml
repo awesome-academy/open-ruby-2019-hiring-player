@@ -53,10 +53,19 @@ en:
       success: "Update success"
       danger: "Fail update user profile"
       danger_loggin: "Please log in"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
+    show:
+      danger_unfollow: "Can't unfollow this user"
   shared:
     error_messages:
       contains_error: "The form contains "
       error: "error"
+    stats:
+      followings: "followings"
+      followers: "followers"
   sessions:
     new:
       login: "Log in"
@@ -65,3 +74,11 @@ en:
       new_user: "You don't have an account?"
     create:
       danger: "Invalid email/password combination"
+  followers:
+    index:
+      danger: "Fail to find followers"
+      title: "Followers"
+  followings:
+    index:
+      danger: "Fail to find followings"
+      title: "Followings"

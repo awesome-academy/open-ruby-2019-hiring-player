@@ -1,0 +1,31 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <h2>
+    <%= link_to(followings_path(id: @user.id), {"data-toggle": "modal", "data-target": "#myModalFollowing"}, remote: true) do %>
+      <strong id="following" class="stat">
+        <%= @user.following.count %>
+      </strong>
+      <%= t ".followings" %>
+    <% end %>
+    <%= link_to(followers_path(id: @user.id), {"data-toggle": "modal", "data-target": "#myModalFollowers"}, remote: true) do %>
+      <strong id="followers" class="stat">
+        <%= @user.followers.count %>
+      </strong>
+      <%= t ".followers" %>
+    <% end %>
+  </h2>
+</div>
+
+<div id="myModalFollowing" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
+
+<div id="myModalFollowers" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
