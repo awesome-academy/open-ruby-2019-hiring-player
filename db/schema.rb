@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_27_032754) do
+ActiveRecord::Schema.define(version: 2019_12_12_084540) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "comment"
@@ -60,12 +60,13 @@ ActiveRecord::Schema.define(version: 2019_11_27_032754) do
   end
 
   create_table "sender_recipients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_send"
-    t.integer "user_recieve"
-    t.integer "sender_recipient_id"
-    t.string "sender_recipient_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "reactionable_type"
+    t.bigint "reactionable_id"
+    t.bigint "sender_id"
+    t.bigint "receiver_id"
+    t.index ["reactionable_type", "reactionable_id"], name: "index_sender_recipients_on_reactionable_type_and_reactionable_id"
   end
 
   create_table "user_profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

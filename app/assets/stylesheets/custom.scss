@@ -165,3 +165,47 @@ input, textarea, select, .uneditable-input {
     border-bottom: 1px solid gray;
   }
 }
+
+#follow_form{
+  margin-top: 11px;
+}
+
+.stats{
+  overflow: inherit;
+  margin-top: 8px;
+  a{
+    margin-right: 25px;
+  }
+}
+
+#myModalFollowing, #myModalFollowers{
+  header{
+  display: none; 
+  }
+
+  .modal-title{
+    color: $red;
+  }
+
+  .modal-dialog{
+    width: 25%;
+  }
+
+  .modal-title{
+    text-align: center;
+  }
+
+  .single li a {
+  padding-left: 12px;
+  color: $black;
+  font-size: 20px;
+  border-bottom: 1px solid $border;
+  line-height: 40px;
+  display: block;
+  text-decoration: none; 
+  }
+
+  .single li a:hover {
+  color: $red;
+  }
+}

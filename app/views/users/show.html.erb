@@ -1,18 +1,25 @@
 <% provide :title, @user.name %>
 
-<div class="col-md-5 col-md-offset-3" id="user_profile_show">
+<div class="col-md-8 col-md-offset-2" id="user_profile_show">
   <div class="row">
     <div class="col-sm-6 col-md-6">
       <% if @user_profile.avatar? %>
         <%= image_tag((@user_profile.avatar.url ), class: "img-rounded img-responsive", id:"img_user") %>
       <% end %>
     </div>
-    <h5>
-      <div class="col-sm-6 col-md-6">
-        <p><%= @user.name %></p>
+    <div class="col-sm-6 col-md-6">
+      <h5>
+        <div class="row">
+          <div class="col-sm-4 col-md-4">
+            <h1 style="float: left"><%= @user.name %></h1>
+          </div>
+          <div class="col-sm-6 col-md-6" id="follow_form">
+            <%= render "follow_form" if logged_in? %>
+          </div>
+        </div>
         <small>
-          <%= @user_profile.address %> <i class="glyphicon glyphicon-map-marker"></i>
-        </small>       
+          <h5><%= @user_profile.address %> <i class="glyphicon glyphicon-map-marker"></i> </h5>
+        </small> 
         <p> 
           <i class="glyphicon glyphicon-envelope"></i> <%= @user.email %>
           <br/>
@@ -27,7 +34,7 @@
           <i class="glyphicon glyphicon-euro"></i> <%= @user_profile.hourly_rent %>
           <br/>
         </p>
-      </div>
-    </h5>
+      </h5>
+    </div>
   </div>
 </div>
