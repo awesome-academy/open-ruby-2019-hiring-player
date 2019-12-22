@@ -3,9 +3,7 @@
 <div class="col-md-8 col-md-offset-2" id="user_profile_show">
   <div class="row">
     <div class="col-sm-6 col-md-6">
-      <% if @user_profile.avatar? %>
-        <%= image_tag((@user_profile.avatar.url ), class: "img-rounded img-responsive", id:"img_user") %>
-      <% end %>
+        <%= image_tag get_image(@user_profile), class: "img-rounded img-responsive", id:"img_user" %>
     </div>
     <div class="col-sm-6 col-md-6">
       <h5>
@@ -21,8 +19,6 @@
           <h5><%= @user_profile.address %> <i class="glyphicon glyphicon-map-marker"></i> </h5>
         </small> 
         <p> 
-          <i class="glyphicon glyphicon-envelope"></i> <%= @user.email %>
-          <br/>
           <i class="glyphicon glyphicon-user"></i> <%= @user_profile.gender %>
           <br/>
           <i class="glyphicon glyphicon-gift"></i> <%= @user_profile.age %>
@@ -37,4 +33,19 @@
       </h5>
     </div>
   </div>
+
+  <div class="row bootstrap snippets">
+    <div class="col-md-12 col-sm-12">
+        <div class="comment-wrapper ">
+          <div class="panel panel-primary"> <div class="panel-heading">
+            <h4><%= t ".comment" %></h4>
+          </div>
+          <div class="panel-body">
+            <%= render "comments/form" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+            

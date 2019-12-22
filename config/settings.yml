@@ -5,3 +5,5 @@ validate_email: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 resize_to_limit: 200
 extension_whitelist: ["jpg", "jpeg", "gif", "png"]
 user_per_page: 5
+time_comment: "%d %b, %Y"
+avatar: "avatar_default.png"

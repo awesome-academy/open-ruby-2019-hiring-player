@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :sender_recipients, only: %i(create destroy)
   resources :followers, only: %i(index)
   resources :followings, only: %i(index)
+  resources :comments, only: %i(create show destroy)
 end

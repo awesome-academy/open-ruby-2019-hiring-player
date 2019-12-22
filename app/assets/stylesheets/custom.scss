@@ -52,7 +52,7 @@ textarea {
 
 body{
   padding-top: 50px;
-  > .container, > .col-md-6{
+  > .container, > .col-md-6, > .col-md-8{
     padding-bottom: 100px;
   }
 }
@@ -135,7 +135,7 @@ html,body {
   }
 }
 
-input, textarea, select, .uneditable-input {
+input, select, .uneditable-input {
   border: 1px solid $border;
   width: 100%;
   margin-bottom: 15px;
@@ -207,5 +207,36 @@ input, textarea, select, .uneditable-input {
 
   .single li a:hover {
   color: $red;
+  }
+}
+
+.comments{
+  padding-top: 100px;
+}
+
+.comment-wrapper .media-list .media img {
+  width:64px;
+  height:64px;
+  border:2px solid $border;
+}
+
+.comment-wrapper .media-list .media {
+  border-bottom: 1px dashed $border;
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+.comment-wrapper, .panel-body {
+  padding-top: 20px;
+  overflow: auto;
+}
+
+.comment-wrapper button{
+  margin-top: 10px;
+}
+
+.media-body{
+  .text-success{
+    font-size: 20px;
   }
 }

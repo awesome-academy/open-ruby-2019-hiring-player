@@ -9,7 +9,7 @@
       <% @users.each do |user| %>    
         <li>
           <div class="col-sm-2 col-md-2">
-            <%= image_tag((user.user_profile.avatar.url), class: "img-rounded img-responsive", id:"img_user_index") %>
+          <%= image_tag get_image(user.user_profile), class: "img-rounded img-responsive", id:"img_user_index" %>
           </div>
           <div class="col-sm-2 col-md-2">
             <h4>

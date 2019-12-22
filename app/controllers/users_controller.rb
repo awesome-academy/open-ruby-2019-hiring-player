@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :load_user, only: %i(show edit update)
-  before_action :load_user_profile, only: %i(show)
-  before_action :logged_in_user, only: %i(index edit update)
+  before_action :load_user_profile, only: :show
+  before_action :logged_in_user, only: %i(index update)
 
   def index
     @users = params[:search] ? User.search_name(params[:search]) : User
@@ -38,7 +38,6 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
   private
 
   def user_params
@@ -58,7 +57,7 @@ class UsersController < ApplicationController
 
     return if @user
     flash[:danger] = t ".not_found_user" 
-    redirect_to root_url
+    redirect_to root_path
   end
 
   def load_user_profile
