@@ -1,0 +1,15 @@
+<li class="media">
+  <a href="#" class="pull-left">
+    <%= image_tag get_image(comment.sender.user_profile), class: "img-circle" %>
+  </a>
+  <div class="media-body">
+    <span class="text-muted pull-right">
+      <small class="text-muted"><%= comment[:created_at].strftime Settings.time_comment %></small>
+    </span>
+    <strong class="text-success"><%= comment.sender.name %></strong>
+    <p><i><%= show_comment comment[:reactionable_id] %></i></p>
+    <% if logged_in? && current_user.id == comment.sender.id %>
+      <p><%= link_to t(".delete"), comment_path(comment.reactionable_id), class: "pull-left text-danger", method: :delete %></p>
+    <% end %>
+  </div>
+</li>

@@ -11,6 +11,7 @@ en:
     home:
       placeholder: "Search player..."
       home: "Home"
+      not_find_user: "Not Found User"
   users:
     index:
       no_suitable_user: "There are no player containing the name "
@@ -18,10 +19,11 @@ en:
       danger_loggin: "Please log in"
     new:
       title: "Sign Up"
-      info: "Success"
       danger_user: "Error create new user"
       danger_profile: "Error build profile new user"
       danger_loggin: "Please log in"
+    create:
+      info: "Success"
     form:
       name: "Name"
       placeholder_name: "Name..."
@@ -58,7 +60,12 @@ en:
     unfollow:
       unfollow: "Unfollow"
     show:
+      comment: "Comment"
+      danger_loggin: "Please log in"
       danger_unfollow: "Can't unfollow this user"
+      danger_comment: "Comment fail added"
+      success_destroy_comment: "Comment deleted"
+      danger_destroy_comment: "Fail to delete comment"
   shared:
     error_messages:
       contains_error: "The form contains "
@@ -82,3 +89,14 @@ en:
     index:
       danger: "Fail to find followings"
       title: "Followings"
+  comments:
+    form:
+      button: "Comment"
+      placeholder: "Comment..."
+    list_comments:
+      delete: "Delete"
+    create:
+      danger_loggin: "Please loggin to comment this user"
+    destroy:
+      success_destroy_comment: "Your comment has been deleted"
+      danger_destroy_comment: "Fail to delete your comment"
