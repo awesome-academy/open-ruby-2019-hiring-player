@@ -100,3 +100,6 @@ en:
     destroy:
       success_destroy_comment: "Your comment has been deleted"
       danger_destroy_comment: "Fail to delete your comment"
+  ratings:
+    form:
+      danger_rating: "Fail to rating this user"

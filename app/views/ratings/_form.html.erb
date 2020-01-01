@@ -1,0 +1,5 @@
+<% unless rated? current_user, @user.id %>
+  <%= render "ratings/create_rating" %>
+<% else %>
+  <%= render "ratings/show_rating" %>
+<% end %>

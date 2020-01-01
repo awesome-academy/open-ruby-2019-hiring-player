@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :users
+  resources :users do
+    post "/rate", to: "ratings#create"
+  end
   resources :sender_recipients, only: %i(create destroy)
   resources :followers, only: %i(index)
   resources :followings, only: %i(index)

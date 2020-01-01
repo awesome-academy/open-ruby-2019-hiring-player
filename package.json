@@ -1,5 +1,5 @@
 {
-  "name": "open_ruby_2019_hiring_player",
+  "name": "hiring_player",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
@@ -13,5 +13,9 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3.9.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/binh168/open-ruby-2019-hiring-player.git",
+  "author": "AnBinh <thanhbinhbk888@gmail.com>",
+  "license": "MIT"
 }
