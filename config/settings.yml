@@ -7,3 +7,6 @@ extension_whitelist: ["jpg", "jpeg", "gif", "png"]
 user_per_page: 5
 time_comment: "%d %b, %Y"
 avatar: "avatar_default.png"
+rental_period: !ruby/range 1..24
+rental_period_max: 24
+rental_period_min: 0

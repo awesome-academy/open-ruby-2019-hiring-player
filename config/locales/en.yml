@@ -103,3 +103,18 @@ en:
   ratings:
     form:
       danger_rating: "Fail to rating this user"
+  orders:
+    new:
+      hour: "hours"
+      booking: "Booking"
+    create:
+      success_order: "Order successly"
+      danger_order: "Order error"
+    modal:
+      booking: "Booking"
+      submit: "Book this player"
+      player: "Player: "
+      rent: "Time want to rent: "
+      cost: "Cost: "
+      current_balance: "Current balance: "
+      hours: "hours"
