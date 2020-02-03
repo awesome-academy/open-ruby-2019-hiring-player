@@ -261,7 +261,7 @@ input, select, .uneditable-input {
   header {
     display: none; 
   }
-  .modal-title{
+  .modal-title {
     text-align: center;
     color: $blue;
   }
@@ -269,7 +269,7 @@ input, select, .uneditable-input {
     width: 40%;
   }
   .form-control {
-  background-color: $white;
+    background-color: $white;
     box-shadow: none;
     border-radius: 40px;
     width: 100px;
@@ -280,7 +280,7 @@ input, select, .uneditable-input {
     font-family: sans-serif;
     padding: 10px;
     font-weight: 600;
-    color: $td;
+    color: $darkslategray;
     font-size: 14px;
     margin: 5px;
   }
@@ -295,7 +295,7 @@ h1#show_name {
 }
 
 #show_order.col-sm-3 {
-  a{
+  a {
     text-align: center;
   }
 }
@@ -371,8 +371,233 @@ h1#show_name {
   box-shadow: 0 1px 4px $black;
 }
 
-.table.table-striped tbody tr{
+.table.table-striped tbody tr {
   background: $background_order ;
+}
+img {
+  max-width: 100%;
+}
+
+.inbox_people {
+  background: $white none repeat scroll 0 0;
+  float: left;
+  overflow: hidden;
+  width: 40%; 
+  border-right: 1px solid $gray;
+}
+
+.inbox_msg {
+  border: 1px solid $gray;
+  clear: both;
+  overflow: hidden;
+}
+
+.top_spac {
+  margin-top: 20px;
+}
+
+.recent_heading {
+  float: left;
+  width: 40%;
+}
+
+.srch_bar {
+  display: inline-block;
+  text-align: right;
+  width: 60%;
+}
+
+.headind_srch { 
+  padding: 10px 29px 10px 20px;
+  overflow: hidden;
+  border-bottom: 1px solid $gray;
+}
+
+.recent_heading h4 {
+  color: $ib_sent;
+  font-size: 21px;
+  margin: auto;
+}
+
+.srch_bar input {
+  border: 1px solid $gray;
+  border-width: 0 0 1px 0;
+  width: 80%;
+  padding: 2px 0 4px 6px;
+  background: none;
+}
+
+.srch_bar .input-group-addon button {
+  background: $black none repeat scroll 0 0;
+  border: medium none;
+  padding: 0;
+  color: $gray;
+  font-size: 18px;
+}
+
+.srch_bar .input-group-addon {
+  margin-left: -27px;
+}
+
+.chat_ib h5 {
+  font-size: 15px;
+  color: $black;
+  margin-bottom: 8px;
+}
+
+.chat_ib h5 span {
+  font-size: 13px;
+  float: right;
+}
+
+.chat_ib p {
+  font-size: 14px;
+  color: $gray;
+  margin: auto;
+}
+
+.chat_img {
+  float: left;
+  width: 11%;
+  img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.chat_ib {
+  float: left;
+  padding-left: 15px;
+  width: 88%;
+}
+
+.chat_people {
+  overflow: hidden;
+  clear: both;
+}
+
+.chat_list {
+  border-bottom: 1px solid $gray;
+  margin: 0;
+  padding: 18px 16px 10px;
+}
+
+.inbox_chat {
+  height: 550px;
+  overflow-y: scroll;
+}
+
+.active_chat {
+  background: $ib_background;
+}
+
+.incoming_msg_img {
+  display: inline-block;
+  width: 5%;
+  img{
+    border: 1px solid $white;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.incoming_msg {
+  margin-bottom: 20px;
+}
+
+.received_msg {
+  display: inline-block;
+  vertical-align: top;
+  width: 92%;
+ }
+ 
+ .received_withd_msg p {
+  background: $white none repeat scroll 0 0;
+  border-radius: 3px;
+  color: $black;
+  font-size: 14px;
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.time_date {
+  color: $black;
+  display: block;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.received_withd_msg {
+  width: 57%;
+}
+
+.mesgs {
+  float: left;
+  padding: 30px 15px 0 25px;
+  width: 60%;
+}
+
+ .sent_msg p {
+  background: $ib_sent none repeat scroll 0 0;
+  border-radius: 3px;
+  font-size: 14px;
+  margin: 0; 
+  color: $white;
+  padding: 5px 10px 5px 12px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.outgoing_msg {
+  overflow: hidden;
+  margin: 26px 0 26px;
+}
+
+.sent_msg {
+  float: right;
+  width: 46%;
+  margin-right: 15px;
+}
+
+.input_msg_write input {
+  background: $white none repeat scroll 0 0;
+  border: medium none;
+  color: $gray;
+  font-size: 15px;
+  min-height: 48px;
+  width: 100%;
+}
+
+.type_msg {
+  border-top: 1px solid $gray;
+  position: relative;
+}
+
+.msg_send_btn {
+  background: $ib_sent none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 50%;
+  color: $white;
+  cursor: pointer;
+  font-size: 17px;
+  height: 33px;
+  position: absolute;
+  right: 0;
+  top: 11px;
+  width: 33px;
+}
+
+.messaging {
+  padding-bottom: 50px;
+}
+
+.msg_history {
+  height: 516px;
+  overflow-y: auto;
+}
+
+.glyphicon-envelope {
   font-size: 18px;
 }
 
@@ -392,6 +617,7 @@ footer {
   color: $white;
   clear: both;
   position: relative;
+  top: 50px;
 }
 
 footer h3 {
@@ -444,4 +670,12 @@ header {
 
 body .content {
   min-height: 50vh;
+}
+
+.inbox_chat a :hover {
+  background-color: $ib_background;
+}
+
+.navbar-right > li {
+  margin-right: 20px;
 }

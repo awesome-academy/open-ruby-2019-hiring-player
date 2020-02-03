@@ -1,0 +1,24 @@
+<% if current_user.id == messenger.sender_id %>
+  <div class="outgoing_msg">
+    <div class="sent_msg">
+      <p><%= user_message messenger %></p>
+      <span class="time_date pull-right">
+        <%= messenger.created_at.strftime Settings.time_messenger %>
+      </span>
+    </div>
+  </div>
+<% else %>
+  <div class="incoming_msg">
+    <div class="incoming_msg_img"> 
+      <%= image_tag get_image(find_user_profile(messenger.sender_id)), class: "img-circle" %> 
+    </div>
+    <div class="received_msg">
+      <div class="received_withd_msg">
+        <p><%= user_message messenger %></p>
+        <span class="time_date">
+          <%= messenger.created_at.strftime Settings.time_messenger %>
+        </span>
+      </div>
+    </div>
+  </div>
+<% end %>
