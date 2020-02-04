@@ -50,7 +50,7 @@ textarea {
   resize: vertical;
 }
 
-body{
+body {
   padding-top: 50px;
   > .container, > .col-md-6, > .col-md-8{
     padding-bottom: 100px;
@@ -61,7 +61,7 @@ html,body {
   height: 100%;
 }
 
-.navbar-header a{
+.navbar-header a {
   color: $black;
   text-transform: uppercase;
   float: left;
@@ -70,11 +70,11 @@ html,body {
   font-weight: bold;
 }
 
-.navbar{
+.navbar {
   background-color: $background_color;
 }
 
-.nav li > a:hover{
+.nav li > a:hover {
   text-decoration: none;
   color: $black;
   background-color: $background_color;
@@ -91,7 +91,7 @@ html,body {
   background-repeat: no-repeat;
   background-size: cover;
   background-image:url('https://images.unsplash.com/photo-1470434151738-dc5f4474c239?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb');
-  .searchbar{
+  .searchbar {
     margin-bottom: auto;
     margin-top: auto;
     height: 60px;
@@ -100,7 +100,7 @@ html,body {
     padding: 10px;
   }
 
-  .search_input{
+  .search_input {
     color: $white;
     border: 0;
     outline: 0;
@@ -111,18 +111,18 @@ html,body {
     transition: width 0.4s linear;
   }
 
-  .searchbar:hover > .search_input{
+  .searchbar:hover > .search_input {
     width: 450px;
     caret-color:$red;
     transition: width 0.4s linear;
   }
 
-  .searchbar:hover > .search_icon{
+  .searchbar:hover > .search_icon {
     background: $white;
     color: $search_icon;
   }
 
-  .search_icon{
+  .search_icon {
     height: 40px;
     width: 40px;
     float: right;
@@ -142,16 +142,17 @@ input, select, .uneditable-input {
   @include box_sizing;
 }
 
-#user_user_profile_attributes_gender{
+#user_user_profile_attributes_gender {
   height: 32px;
 }
 
-#img_user{
-  width: 300px;
-  height: 350px;
+#img_user {
+  width: 200px;
+  height: 200px;
+  border: 1px solid $gray;
 }
 
-#user_profile_show{
+#user_profile_show {
   padding-top: 40px;
 }
 
@@ -162,37 +163,30 @@ input, select, .uneditable-input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid $gray;
   }
 }
 
-#follow_form{
-  margin-top: 11px;
-}
-
-.stats{
+.stats {
   overflow: inherit;
   margin-top: 8px;
-  a{
+  a {
     margin-right: 25px;
   }
 }
 
-#myModalFollowing, #myModalFollowers{
-  header{
+#myModalFollowing, #myModalFollowers {
+  header {
   display: none; 
   }
 
-  .modal-title{
-    color: $red;
-  }
-
-  .modal-dialog{
+  .modal-dialog {
     width: 25%;
   }
 
-  .modal-title{
+  .modal-title {
     text-align: center;
+    color: $red;
   }
 
   .single li a {
@@ -210,7 +204,7 @@ input, select, .uneditable-input {
   }
 }
 
-.comments{
+.comments {
   padding-top: 100px;
 }
 
@@ -231,18 +225,20 @@ input, select, .uneditable-input {
   overflow: auto;
 }
 
-.comment-wrapper button{
+.comment-wrapper button {
   margin-top: 10px;
 }
 
-.media-body{
-  .text-success{
+.media-body {
+  .text-success {
     font-size: 20px;
   }
 }
 
 .rating-form {
-  font-size: 12px;
+  font-size: 10px;
+  padding: 0px;
+  width: 120%;
 }
 
 .rating-disabled {
@@ -255,4 +251,52 @@ input, select, .uneditable-input {
   .clear-rating {
     display: none;
   }
+}
+
+#myModalBooking {
+  header {
+    display: none; 
+  }
+  .modal-title{
+    text-align: center;
+    color: $blue;
+  }
+  .modal-dialog {
+    width: 40%;
+  }
+  .form-control {
+    background-color: #fff;
+    box-shadow: none;
+    border-radius: 40px;
+    width: 100px;
+    margin-top: 10px;
+  }
+  
+  td {
+    font-family: sans-serif;
+    padding: 10px;
+    font-weight: 600;
+    color: #354052;
+    font-size: 14px;
+    margin: 5px;
+  }
+  #order_rental_period {
+    display: inline;
+  }
+}
+
+h1#show_name {
+  text-align: left;
+  color: $red;
+}
+
+#show_order.col-sm-3 {
+  a{
+    text-align: center;
+  }
+}
+
+#user_profile_show.col-md-12 .col-sm-7 {
+  border: 1px dashed $gray;
+  border-radius: 10px;
 }

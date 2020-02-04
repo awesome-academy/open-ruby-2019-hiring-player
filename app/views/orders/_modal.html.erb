@@ -1,0 +1,36 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <h3 class="modal-title"><%= t ".booking" %></h3>
+</div>
+<div class="modal-body">
+  <h4>
+    <%= form_for :order, url: orders_path, method: :post do |f| %>
+      <div><%= hidden_field_tag :user_id, @user.id %></div>
+      <table>
+        <tbody>
+          <tr>
+            <td><%= t ".player" %></td>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <td><span><%= t ".rent" %></span></td>
+            <td>
+              <%= f.select :rental_period, options_for_select(Settings.rental_period), {}, { class: "form-control" } %>
+              <span id="hours_span"><%= t ".hours" %></span>
+            </td>
+          </tr>
+          <tr>
+            <td><span><%= t ".cost" %></span></td>
+            <td><span id="cost" value="<%= @user.user_profile.hourly_rent %>"><%= @user.user_profile.hourly_rent %></span></td>
+            <%= f.hidden_field :cost %>
+          </tr>
+          <tr>
+            <td><span><%= t ".current_balance" %></span></td>
+            <td><span class="total-amount"></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= f.submit t(".submit"), class: "btn btn-info" %>
+    <% end %>
+  </h4>
+</div>

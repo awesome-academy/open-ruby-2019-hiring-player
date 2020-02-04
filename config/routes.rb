@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users do
     post "/rate", to: "ratings#create"
   end
+  resources :orders, only: %i(new create)
   resources :sender_recipients, only: %i(create destroy)
   resources :followers, only: %i(index)
   resources :followings, only: %i(index)
