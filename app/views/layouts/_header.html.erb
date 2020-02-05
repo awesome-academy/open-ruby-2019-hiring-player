@@ -7,15 +7,36 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-right navbar-nav">
           <% if logged_in? %>
+            <li class="dropdown" id="notifications">  
+              <%= link_to(sender_recipients_path, 
+                {data: {toggle: "modal", target: "#myModalNotification"}}, remote: true) do %>
+                <span class="glyphicon glyphicon-bell"></span>
+                <span class="badgeAlert"><%= count_notifications %></span>
+              <% end %>
+            </li>
             <li class="dropdown">  
               <%= link_to "#", :class => "dropdown-toggle", :data => { :toggle => "dropdown"} do %>
                 <%= t".wellcome" %> <%= current_user.name %> <b class="caret"></b>
               <% end %>
               <ul class="dropdown-menu" role="menu">
-                <li><%= link_to t(".profile"), current_user %></li>
-                <li><%= link_to t(".settings"), edit_user_path(current_user) %></li>
-                <li class="divider"></li>
-                <li> <%= link_to t(".logout"), logout_path, method: :delete %> </li>
+                <li>
+                  <%= link_to current_user do%>
+                    <%= t ".profile" %>
+                    <i><span class="glyphicon glyphicon-user pull-right"></span></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to edit_user_path(current_user) do %>
+                    <%= t ".settings" %>
+                    <i><span class="glyphicon glyphicon-cog pull-right"></span></i>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to logout_path, method: :delete do %>
+                    <%= t ".logout" %>
+                    <i><span class="glyphicon glyphicon-log-out pull-right"></span></i>
+                  <% end %>
+                </li>
               </ul>
             </li>
           <% else %>
@@ -26,3 +47,10 @@
     </div>
   </div>
 </header>
+
+<div id="myModalNotification" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>

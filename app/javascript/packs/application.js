@@ -12,6 +12,7 @@ require("bootstrap")
 require("packs/star-rating")
 require("packs/rating")
 require("packs/order")
+require("packs/notification")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

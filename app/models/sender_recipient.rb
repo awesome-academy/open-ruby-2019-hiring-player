@@ -8,4 +8,5 @@ class SenderRecipient < ApplicationRecord
   scope :order_comment, ->{order created_at: :desc}
   scope :find_receiver, ->(user_id){where receiver_id: user_id}
   scope :find_sender, ->(user_id){where sender_id: user_id}
+  scope :unread, -> (user_id){where(checked: false, receiver_id: user_id)}
 end

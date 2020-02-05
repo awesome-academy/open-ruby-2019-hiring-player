@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <h3 class="modal-title"><%= t ".title" %></h3>
+</div>
+<div class="modal-body">
+  <div class="single category">
+    <ul class="list-unstyled">
+      <% @notifications.each do |notification| %>
+        <% if notification.reactionable_type == "Comment" %>
+          <li class="notification">
+            <%= hidden_field_tag :notification_id, notification.id %>
+            <%= hidden_field_tag :path, user_path(current_user) %> 
+            <%= t ".comment" %><%= notification.reactionable_type %>
+            <%= t ".from" %>
+            <%= get_user_name notification.receiver_id %>
+          </li>
+        <% elsif notification.reactionable_type == "Follow" %>
+          <li class="notification">
+            <%= hidden_field_tag :notification_id, notification.id %>
+            <%= hidden_field_tag :path, user_path(notification.sender_id) %> 
+            <%= t ".player" %>
+            <%= get_user_name notification.sender_id %>
+            <%= t ".follow" %>
+          </li>
+        <% elsif notification.reactionable_type == "Order" %>
+          <li class="notification">
+            <%= hidden_field_tag :notification_id, notification.id %>
+            <%= hidden_field_tag :path, order_path(id: notification.reactionable_id, notification: notification) %>
+            <%= t ".player" %>
+            <%= get_user_name notification.receiver_id %>
+            <%= t ".booking" %>
+          </li>
+        <% else %>
+          <li class="notification">
+            <%= hidden_field_tag :notification_id, notification.id %>
+            <%= hidden_field_tag :path, user_path(notification.sender_id) %>
+            <%= t ".player" %>
+            <%= get_user_name notification.receiver_id %>
+            <%= t ".rating" %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
