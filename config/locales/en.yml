@@ -103,6 +103,7 @@ en:
   ratings:
     form:
       danger_rating: "Fail to rating this user"
+      total: " total"
   orders:
     new:
       hour: "hours"

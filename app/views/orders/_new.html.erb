@@ -1,10 +1,17 @@
 <% unless current_user? @user %>
-  <ul class="rating-form">
-    <%= render "ratings/form" %>
-  </ul>
-  <%= link_to(new_order_path(user_id: @user.id), {"data-toggle": "modal", "data-target": "#myModalBooking"}, remote: true) do %>
-    <h4><button type="button" class="btn btn-primary"><%= t ".booking" %></button></h4>
-  <% end %>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="rating-form">
+        <%= render "ratings/form" %>
+      </ul>
+    </div>
+    <div class="col-md-12">
+      <%= link_to(new_order_path(user_id: @user.id),
+        {data: {toggle: "modal", target: "#myModalBooking"}}, remote: true) do %>
+        <h4><button type="button" class="btn btn-primary"><%= t ".booking" %></button></h4>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 
 <div id="myModalBooking" class="modal fade" role="dialog">

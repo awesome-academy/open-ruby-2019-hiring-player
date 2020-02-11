@@ -11,3 +11,5 @@ rental_period: !ruby/range 1..24
 rental_period_max: 24
 rental_period_min: 0
 time_order: " %T %d %b, %Y"
+average_rating: 1
+rating_empty: 0

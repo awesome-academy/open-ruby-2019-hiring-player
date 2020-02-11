@@ -376,3 +376,11 @@ body{
   background: $background_order ;
   font-size: 18px;
 }
+
+#average_rating {
+  font-size: 25px;
+}
+
+.glyphicon-star {
+  color: $star;
+}

@@ -1,5 +1,22 @@
-<% unless rated? current_user, @user.id %>
-  <%= render "ratings/create_rating" %>
-<% else %>
-  <%= render "ratings/show_rating" %>
-<% end %>
+<div class="row">
+  <div class="col-md-10">
+    <p class="text-center" id="average_rating">
+      <%= average_rating @user.id %>
+      <i class="glyphicon glyphicon-star"></i>
+    </p>
+  </div>
+  <div class="col-md-12">
+    <% unless rated? current_user, @user.id %>
+      <%= render "ratings/create_rating" %>
+    <% else %>
+      <%= render "ratings/show_rating" %>
+    <% end %>
+  </div>
+  <div class="col-md-8 col-md-offset-3">
+    <h5>
+      <span class="glyphicon glyphicon-user"></span>
+      <%= rating_reactionable(@user.id).count %>
+      <%= t ".total" %>
+    </h5>
+  </div>
+</div>

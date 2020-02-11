@@ -9,4 +9,6 @@ class SenderRecipient < ApplicationRecord
   scope :find_receiver, ->(user_id){where receiver_id: user_id}
   scope :find_sender, ->(user_id){where sender_id: user_id}
   scope :unread, -> (user_id){where(checked: false, receiver_id: user_id)}
+  scope :ratings, -> (user_id){select(:reactionable_id)
+    .where(receiver_id: user_id, reactionable_type: Rating.name)}
 end
