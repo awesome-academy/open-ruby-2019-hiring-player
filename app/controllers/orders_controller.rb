@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :logged_in_user, only: :create
+  before_action :load_order, :load_order_reactionable, only: :show
 
   def new
     @order = Order.new
@@ -19,6 +20,8 @@ class OrdersController < ApplicationController
     end
   end
 
+  def show; end
+
   private
 
   def order_params
@@ -33,5 +36,21 @@ class OrdersController < ApplicationController
       flash[:danger] = t ".danger_order"
       redirect_to request.referrer
     end
+  end
+
+  def load_order
+    @order = Order.find_by id: params[:id]
+
+    return if @order
+    flash[:danger] = t ".not_found_order" 
+    redirect_to root_path
+  end
+
+  def load_order_reactionable
+    @order_reactionable = SenderRecipient.find_by id: params[:notification]
+
+    return if @order_reactionable
+    flash[:danger] = t ".not_found_order" 
+    redirect_to root_path
   end
 end

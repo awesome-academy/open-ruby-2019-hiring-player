@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="grid invoice">
+      <div class="grid-body">
+        <div class="invoice-title">
+          <br>
+          <div class="row">
+            <div class="col-xs-12">
+              <h1><%= t ".title" %><br>
+              <span class="small"><%= t ".order_id" %><%= @order.id %></span></h1>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-striped">
+              <thead>
+                <tr class="line">
+                  <td><strong><%= t ".no" %></strong></td>
+                  <td class="text-center"><strong><%= t ".player" %></strong></td>
+                  <td class="text-center"><strong><%= t ".rental_period" %></strong></td>
+                  <td class="text-center"><strong><%= t ".cost" %></strong></td>
+                  <td class="text-center"><strong><%= t ".time_order" %></strong></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= @order.id %></td>
+                  <td class="text-center">
+                    <%= link_to user_path(@order_reactionable.sender_id) do %>
+                      <%= get_user_name @order_reactionable.sender_id %>
+                    <% end %>
+                  </td>
+                  <td class="text-center"><%= @order.rental_period %></td>
+                  <td class="text-center"><%= @order.cost %></td>
+                  <td class="text-center"><%= @order.created_at.strftime Settings.time_order %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>									
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

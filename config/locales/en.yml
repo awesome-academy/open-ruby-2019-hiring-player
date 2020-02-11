@@ -110,6 +110,15 @@ en:
     create:
       success_order: "Order successly"
       danger_order: "Order error"
+    show:
+      not_found_order: "Not found this order"
+      player: "PLAYER"
+      rental_period: "RENTAL PERIOD"
+      cost: "COST"
+      time_order: "TIME ORDER"
+      no: "NO"
+      title: "Your Order"
+      order_id: "order #"
     modal:
       booking: "Booking"
       submit: "Book this player"
@@ -118,3 +127,16 @@ en:
       cost: "Cost: "
       current_balance: "Current balance: "
       hours: "hours"
+  notifications:
+    index:
+      title: "Your new notification"
+      comment: "You have new "
+      from: " from "
+      player: "Player "
+      follow: " is following you"
+      booking: " want to booking you"
+      rating: " rated you"
+  sender_recipients:
+    update:
+      danger: "This notification cannot be checked"
+      not_found_notification: "Not found this notification"

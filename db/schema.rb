@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_014155) do
+ActiveRecord::Schema.define(version: 2020_02_10_082448) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_02_03_014155) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "messengers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "message"
+  create_table "messeages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "messeage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_014155) do
     t.bigint "reactionable_id"
     t.bigint "sender_id"
     t.bigint "receiver_id"
+    t.boolean "checked", default: false
     t.index ["reactionable_type", "reactionable_id"], name: "index_sender_recipients_on_reactionable_type_and_reactionable_id"
   end
 
@@ -73,7 +74,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_014155) do
     t.string "address"
     t.integer "age"
     t.integer "gender"
-    t.integer "money"
+    t.integer "money", default: 0
     t.string "game"
     t.string "rank"
     t.integer "hourly_rent"

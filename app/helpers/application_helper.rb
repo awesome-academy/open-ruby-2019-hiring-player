@@ -16,4 +16,12 @@ module ApplicationHelper
   def list_comment object
     object.passive_comment.order_comment
   end
+
+  def count_notifications
+    SenderRecipient.unread(current_user.id).count
+  end
+
+  def get_user_name user_id
+    @user_name ||= User.find_by(id: user_id).name
+  end
 end
