@@ -51,13 +51,10 @@ textarea {
 }
 
 body {
-  padding-top: 50px;
-  > .container, > .col-md-6, > .col-md-8{
-    padding-bottom: 100px;
-  }
+  padding-top: 60px;
 }
 
-html,body {
+html {
   height: 100%;
 }
 
@@ -70,10 +67,6 @@ html,body {
   font-weight: bold;
 }
 
-.navbar {
-  background-color: $background_color;
-}
-
 .nav li > a:hover {
   text-decoration: none;
   color: $black;
@@ -81,16 +74,17 @@ html,body {
 }
 
 .home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 140px;
+  position: relative;
   height: 100vh;
   min-height: 400px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image:url('https://images.unsplash.com/photo-1470434151738-dc5f4474c239?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb');
+  z-index: 1;
+  background-image: url('https://images.unsplash.com/photo-1470434151738-dc5f4474c239?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb'); 
+}
+
+.search{
   .searchbar {
     margin-bottom: auto;
     margin-top: auto;
@@ -106,14 +100,14 @@ html,body {
     outline: 0;
     background: none;
     width: 0;
-    caret-color:transparent;
+    caret-color: transparent;
     line-height: 40px;
     transition: width 0.4s linear;
   }
 
   .searchbar:hover > .search_input {
     width: 450px;
-    caret-color:$red;
+    caret-color: $red;
     transition: width 0.4s linear;
   }
 
@@ -130,8 +124,7 @@ html,body {
     justify-content: center;
     align-items: center;
     border-radius: 80%;
-    color: $white;
-    text-decoration:none;
+    text-decoration: none;
   }
 }
 
@@ -177,11 +170,21 @@ input, select, .uneditable-input {
 
 #myModalFollowing, #myModalFollowers, #myModalNotification {
   header {
-  display: none; 
+    display: none; 
+  }
+
+  footer {
+    display: none;
+  }
+
+  .img-circle {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
   }
 
   .modal-dialog {
-    width: 25%;
+    width: 35%;
   }
 
   .modal-title {
@@ -190,18 +193,18 @@ input, select, .uneditable-input {
   }
 
   .single li a, li.notification {
-  padding-left: 12px;
-  color: $black;
-  font-size: 20px;
-  border-bottom: 1px solid $border;
-  line-height: 40px;
-  display: block;
-  text-decoration: none;
-  font-size: 16px;
+    padding-left: 12px;
+    color: $black;
+    font-size: 20px;
+    border-bottom: 1px solid $border;
+    line-height: 40px;
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
   }
 
   .single li a:hover, li.notification:hover {
-  color: $blue;
+    color: $blue;
   }
 }
 
@@ -210,9 +213,9 @@ input, select, .uneditable-input {
 }
 
 .comment-wrapper .media-list .media img {
-  width:64px;
-  height:64px;
-  border:2px solid $border;
+  width: 64px;
+  height: 64px;
+  border: 2px solid $border;
 }
 
 .comment-wrapper .media-list .media {
@@ -266,7 +269,7 @@ input, select, .uneditable-input {
     width: 40%;
   }
   .form-control {
-    background-color: #fff;
+  background-color: $white;
     box-shadow: none;
     border-radius: 40px;
     width: 100px;
@@ -277,7 +280,7 @@ input, select, .uneditable-input {
     font-family: sans-serif;
     padding: 10px;
     font-weight: 600;
-    color: #354052;
+    color: $td;
     font-size: 14px;
     margin: 5px;
   }
@@ -300,6 +303,7 @@ h1#show_name {
 #user_profile_show.col-md-12 .col-sm-7 {
   border: 1px dashed $gray;
   border-radius: 10px;
+  margin-bottom: 100px;
 }
 
 .badgeAlert {
@@ -317,12 +321,7 @@ h1#show_name {
   border-radius: 10px;
   position: absolute;
   margin-top: -10px;
-  margin-left: -10px
-}
-
-body{
-  margin-top: 20px;
-  background: $white;
+  margin-left: -10px;
 }
 
 .invoice {
@@ -383,4 +382,66 @@ body{
 
 .glyphicon-star {
   color: $star;
+}
+
+footer {
+  background-color: $background-color-footer;
+  width: 100%;
+  bottom: 0;
+  font-weight: lighter;
+  color: $white;
+  clear: both;
+  position: relative;
+}
+
+footer h3 {
+  font-weight: lighter;
+}
+
+footer ul {
+  padding-left: 5px;
+  list-style: none;
+}
+
+footer p {
+  text-align: justify;
+  font-size: 12px;
+}
+
+footer iframe {
+  width: 100%;
+  position: relative;
+  height: 170px;
+}
+
+.sm {
+  list-style: none;
+  overflow: auto;
+}
+
+.sm li {
+  display: inline;
+  padding: 5px;
+  float: left;
+} 
+
+.sm li a img {
+  width: 32px;
+}
+
+header {
+  height: 20px;
+  a {
+    margin-top: 10px;
+  }
+  .navbar {
+    height: 80px;
+    .container {
+      margin-top: 8px;
+    }
+  }
+}
+
+body .content {
+  min-height: 50vh;
 }

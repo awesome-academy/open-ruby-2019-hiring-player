@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :load_user, only: %i(show edit update)
   before_action :load_user_profile, only: :show
-  before_action :logged_in_user, only: %i(index update)
+  before_action :logged_in_user, only: %i(update)
 
   def index
     @users = params[:search] ? User.search_name(params[:search]) : User
