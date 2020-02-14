@@ -24,4 +24,18 @@ module ApplicationHelper
   def get_user_name user_id
     @user_name ||= User.find_by(id: user_id).name
   end
+  
+  def rating_reactionable user_id
+    SenderRecipient.ratings user_id
+  end
+
+  def average_rating user_id
+    rating = Rating.by_ids(rating_reactionable user_id).pluck(:rating)
+    if rating.empty?
+      average_rating = Settings.rating_empty
+    else
+      average_rating = rating.inject{ |sum, el| sum + el }.to_f / rating.size
+      average_rating.round(Settings.average_rating)
+    end
+  end
 end
