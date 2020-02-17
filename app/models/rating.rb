@@ -1,5 +1,5 @@
 class Rating < ApplicationRecord
-  has_one :sender_recipient, as: :send_recieve
+  has_one :sender_recipient, as: :reactionable, dependent: :destroy
 
   scope :by_ids, -> (rating_id){select(:rating).where(id: rating_id)}
 

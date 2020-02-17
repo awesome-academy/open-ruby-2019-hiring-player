@@ -38,8 +38,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.password_minimum}
   
   scope :search_name, ->name{where "name LIKE ?", "%#{name}%"}
-
-  delegate :name, :email, to: :sender_recipients, prefix: :user, allow_nil: true
   
   class << self
     def digest string
