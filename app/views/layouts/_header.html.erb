@@ -1,11 +1,21 @@
 <header>
-  <div class="navbar navbar-fixed-top navbar-light">
+  <div class="navbar navbar-fixed-top navbar-expand-lg navbar-inverse">
     <div class="container">
       <div class="navbar-header">
         <%= link_to t(".title"), root_path, class: "navbar-brand" %>
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-right navbar-nav">
+          <li>
+            <section class="search">
+              <%= form_tag(users_path, method: :get, class: "searchbar") do |f| %>
+                <%= text_field_tag :search, "", class: "search_input", placeholder: t(".placeholder") %>
+                <%= button_tag(type: "submit", class: "search_icon") do %>
+                  <i class="glyphicon glyphicon-search"></i>
+                <% end %>
+              <% end %>
+            </section>
+          </li>
           <% if logged_in? %>
             <li class="dropdown" id="notifications">  
               <%= link_to(sender_recipients_path, 
@@ -40,7 +50,16 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to t(".login"), login_path %></li>
+            <li><%= link_to signup_path do %>
+              <span class="glyphicon glyphicon-user"></span>
+              <%= t ".signup" %>
+              <% end %>
+            </li>
+            <li><%= link_to login_path do %>
+              <span class="glyphicon glyphicon-log-in"></span>
+              <%= t ".login" %>
+              <% end %>
+            </li>
           <% end %>
         </ul>
       </div>		

@@ -1,0 +1,40 @@
+<footer>
+  <div class="container-fluid">
+  <div class="col-md-4" >
+      <h3><%= t ".about" %></h3>
+      <p><%= t ".about_content" %></p>
+  </div>
+  <div class="col-md-4">
+      <h3><%= t ".location" %></h3>
+      <iframe src=<%= Settings.location %>></iframe>
+  </div>
+  <div class="col-md-4" >
+    <h3><%= t ".contact" %></h3>
+    <ul>
+      <li><%= t ".phone" %></li>
+      <li><%= t ".email" %></li>
+      <li><%= t ".fax" %></li>
+    </ul>
+    <p>
+      <%= t ".contact_content" %>
+    </p>
+    <ul class="sm">
+      <li>
+        <%= link_to "#" do %>
+          <%= image_tag Settings.fb_image, class:"img-responsive" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#" do %>
+          <%= image_tag Settings.in_image, class:"img-responsive" %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to "#" do %>
+          <%= image_tag Settings.twitter_image, class:"img-responsive" %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  </div>
+</footer>

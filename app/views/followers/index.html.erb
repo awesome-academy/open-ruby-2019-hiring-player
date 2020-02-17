@@ -6,7 +6,12 @@
   <div class="single category">
     <ul class="list-unstyled">
       <% @users.each do |user| %>
-        <li><%= link_to user.name, user %></li>
+        <li>
+          <%= link_to user do %>
+            <%= image_tag get_image(user.user_profile), class: "img-circle" %>
+            <%= user.name %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
