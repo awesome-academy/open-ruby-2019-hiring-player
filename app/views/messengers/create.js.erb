@@ -1,0 +1,3 @@
+$('#messenger_message').val('');
+$('#user_list_messengers').append('<%= escape_javascript(render :partial => 'messengers/messenger',
+  locals: {messenger:  @message_reactionable}) %>');

@@ -1,0 +1,4 @@
+$('#msg_history').html('<%= escape_javascript(render :partial => 'messengers/index',
+  locals: {messengers:  @messengers}) %>');
+$('#input_msg_write').html('<%= escape_javascript(render :partial => 'messengers/new',
+  locals: {user:  @user}) %>');

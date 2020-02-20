@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def count_notifications
-    SenderRecipient.unread(current_user.id).count
+    SenderRecipient.unread(current_user.id).notification.count
   end
 
   def get_user_name user_id
@@ -37,5 +37,22 @@ module ApplicationHelper
       average_rating = rating.inject{ |sum, el| sum + el }.to_f / rating.size
       average_rating.round(Settings.average_rating)
     end
+  end
+
+  def user_message object
+    msg = Messenger.find_by id: object.reactionable_id
+
+    return msg.message if msg
+    flash[:danger] = t ".not_found_user" 
+    redirect_to root_path
+
+  end
+
+  def find_user_profile id
+    user = User.find_by id: id
+
+    return user.user_profile if user
+    flash[:danger] = t ".not_found_messenger" 
+    redirect_to root_path
   end
 end

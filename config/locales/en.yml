@@ -152,3 +152,19 @@ en:
     update:
       danger: "This notification cannot be checked"
       not_found_notification: "Not found this notification"
+  messengers:
+    index:
+      danger_login: "Please login"
+      no_messaged: "You have never messaged this user"
+      recent: "Recent"
+      messaging: "Messaging"
+    new:
+      placeholder: "Type a message"
+    create:
+      danger: "You can't sent message to this user"
+    messenger:
+      not_found_user: "Not Found User"
+      not_found_messenger: "Not Found Messenger"
+  conversations:
+    index:
+      danger_loggin: "Please log in"

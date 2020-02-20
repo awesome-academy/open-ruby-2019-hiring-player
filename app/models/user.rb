@@ -12,6 +12,8 @@ class User < ApplicationRecord
     foreign_key: :sender_id
   has_many :active_order, ->{where reactionable_type: Order.name}, class_name: SenderRecipient.name,
     foreign_key: :sender_id
+  has_many :active_messenger, ->{where reactionable_type: Messenger.name}, class_name: SenderRecipient.name,
+    foreign_key: :sender_id
   has_many :passive, class_name: SenderRecipient.name, foreign_key: :receiver_id
   has_many :passive_follow, ->{where reactionable_type: Follow.name}, class_name: SenderRecipient.name,
     foreign_key: :receiver_id
@@ -20,6 +22,8 @@ class User < ApplicationRecord
   has_many :passive_rating, ->{where reactionable_type: Rating.name}, class_name: SenderRecipient.name,
     foreign_key: :receiver_id
   has_many :passive_order, ->{where reactionable_type: Order.name}, class_name: SenderRecipient.name,
+    foreign_key: :receiver_id
+  has_many :passive_messenger, ->{where reactionable_type: Messenger.name}, class_name: SenderRecipient.name,
     foreign_key: :receiver_id
   has_many :following, through: :active_follow, source: :receiver
   has_many :followers, through: :passive_follow, source: :sender
@@ -38,7 +42,10 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.password_minimum}
   
   scope :search_name, ->name{where "name LIKE ?", "%#{name}%"}
-  
+  scope :except_user, ->(user_id) { where.not(id: user_id) }
+
+  delegate :name, :email, to: :sender_recipients, prefix: :user, allow_nil: true
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : 

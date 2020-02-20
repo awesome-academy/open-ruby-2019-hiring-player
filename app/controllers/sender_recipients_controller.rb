@@ -4,7 +4,7 @@ class SenderRecipientsController < ApplicationController
   before_action :find_notification, only: %i(update)
 
   def index
-    @notifications = SenderRecipient.unread current_user.id
+    @notifications = SenderRecipient.unread(current_user.id).notification
     respond_to do |format|
       format.html { render partial: "notifications/index" }
     end

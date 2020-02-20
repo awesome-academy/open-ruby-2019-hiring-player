@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_082448) do
+ActiveRecord::Schema.define(version: 2020_02_16_133143) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment"
@@ -23,10 +23,11 @@ ActiveRecord::Schema.define(version: 2020_02_10_082448) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "messeages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "messeage"
+  create_table "messengers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "message"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_messengers_on_created_at"
   end
 
   create_table "notifications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -74,7 +75,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_082448) do
     t.string "address"
     t.integer "age"
     t.integer "gender"
-    t.integer "money", default: 0
+    t.integer "money"
     t.string "game"
     t.string "rank"
     t.integer "hourly_rent"
