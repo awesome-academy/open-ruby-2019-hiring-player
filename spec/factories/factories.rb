@@ -10,4 +10,14 @@ FactoryBot.define do
     cost {120000}
     rental_period {22}
   end
+
+  factory :comment do
+    comment {"abc"}
+  end
+
+  factory :rating do
+    rating {3}
+  end
+
+  factory :follow do; end
 end

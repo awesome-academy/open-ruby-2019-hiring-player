@@ -1,11 +1,7 @@
 class OrdersController < ApplicationController
   before_action :logged_in_user, only: :create
   before_action :load_order, :load_order_reactionable, only: :show
-
-  def new
-    @order = Order.new
-  end
-
+  
   def create
     @order = Order.new order_params
 
